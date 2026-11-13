@@ -55,7 +55,7 @@ export const IndustryBenchmarkSection: React.FC = () => {
           Standar Minimum Aplikasi Room Design &amp; Ergonomi Interior
         </h2>
         <p className="text-sm text-slate-600 mt-0.5">
-          Sintesis fitur wajib dari aplikasi desain interior terkemuka dan standar ergonomi arsitektural internasional yang diterapkan pada RuangKaryaHasna.
+          Sintesis fitur wajib dari aplikasi desain interior terkemuka dan standar ergonomi arsitektural internasional yang diterapkan pada UPG.
         </p>
       </div>
 

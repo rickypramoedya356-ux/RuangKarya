@@ -1,4 +1,4 @@
-# RuangKaryaHasna — Studio Perancang Ruang & Konsultan Interior Sistematis
+# UPG — Studio Perancang Ruang & Konsultan Interior Sistematis
 
 Aplikasi web *full-stack* untuk merancang denah ruangan 2D metrik berskala, melakukan audit ergonomi & sirkulasi secara *real-time*, menghitung kebutuhan pencahayaan (Lumen/Kelvin) & warna (60-30-10), serta berkonsultasi dengan Arsitek Interior berbasis Gemini API.
 
@@ -42,7 +42,7 @@ File `.gitignore` sudah dikonfigurasi agar `node_modules/`, `dist/`, dan `.env` 
 ```bash
 git init
 git add .
-git commit -m "Initial commit: RuangKaryaHasna interior planner"
+git commit -m "Initial commit: UPG interior planner"
 git branch -M main
 git remote add origin https://github.com/USERNAME/NAMA-REPO.git
 git push -u origin main
