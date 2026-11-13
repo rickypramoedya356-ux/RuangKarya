@@ -17,7 +17,7 @@ import { AdvisorySection } from './components/AdvisorySection';
 import { CatalogRabSection } from './components/CatalogRabSection';
 import { IndustryBenchmarkSection } from './components/IndustryBenchmarkSection';
 
-const STORAGE_KEY = 'ruangkarya_active_room_v1';
+const STORAGE_KEY = 'ruangkarya_active_room_pink_v1';
 
 export default function App() {
   const [room, setRoom] = useState<RoomConfig>(() => {
@@ -265,13 +265,13 @@ export default function App() {
   const handleApplySuggestedLayout = (items: SuggestedLayoutItem[]) => {
     if (!items || items.length === 0) return;
     const categoryColorMap: Record<string, string> = {
-      seating: '#CBD5E1',
-      table: '#E2E8F0',
-      storage: '#D6D3D1',
-      bed: '#E2E8F0',
-      workspace: '#E2E8F0',
-      lighting: '#FEF3C7',
-      decor: '#F1F5F9',
+      seating: '#FBCFE8',
+      table: '#FCE7F3',
+      storage: '#FAD2E1',
+      bed: '#FBCFE8',
+      workspace: '#FCE7F3',
+      lighting: '#FDE8F2',
+      decor: '#F9A8D4',
     };
 
     const nextFurniture: PlacedFurniture[] = items.map((item, idx) => {
@@ -296,7 +296,7 @@ export default function App() {
         material: item.material,
         priceIdr: item.estimatedPriceIdr || 1500000,
         isFloorOverlay: Boolean(item.isFloorOverlay),
-        colorHex: categoryColorMap[item.category] || '#E2E8F0',
+        colorHex: categoryColorMap[item.category] || '#FBCFE8',
       };
     });
 
@@ -427,9 +427,9 @@ export default function App() {
   };
 
   return (
-    <div className="min-h-screen flex flex-col bg-[#F8FAFC] text-slate-900">
+    <div className="min-h-screen flex flex-col bg-[#FFF7FA] text-slate-900">
       {/* 3-Zone Top Bar Contract */}
-      <header className="bg-white border-b border-slate-200 sticky top-0 z-30 no-print">
+      <header className="bg-white border-b border-pink-200/80 sticky top-0 z-30 no-print">
         <div className="max-w-[1440px] mx-auto px-6 h-16 flex items-center justify-between gap-8">
           {/* Zone 1: Single text element wordmark */}
           <a
@@ -442,16 +442,16 @@ export default function App() {
 
           {/* Zone 2: 4 single-line nav links */}
           <nav className="hidden md:flex items-center gap-6 text-sm font-medium text-slate-600">
-            <a href="#denah-2d" className="hover:text-slate-900 transition-colors whitespace-nowrap shrink-0">
+            <a href="#denah-2d" className="hover:text-pink-700 transition-colors whitespace-nowrap shrink-0">
               Denah 2D
             </a>
-            <a href="#konsultan-ai" className="hover:text-slate-900 transition-colors whitespace-nowrap shrink-0">
+            <a href="#konsultan-ai" className="hover:text-pink-700 transition-colors whitespace-nowrap shrink-0">
               Konsultan AI
             </a>
-            <a href="#katalog-rab" className="hover:text-slate-900 transition-colors whitespace-nowrap shrink-0">
+            <a href="#katalog-rab" className="hover:text-pink-700 transition-colors whitespace-nowrap shrink-0">
               Katalog &amp; RAB
             </a>
-            <a href="#standar-industri" className="hover:text-slate-900 transition-colors whitespace-nowrap shrink-0">
+            <a href="#standar-industri" className="hover:text-pink-700 transition-colors whitespace-nowrap shrink-0">
               Standar Industri
             </a>
           </nav>
@@ -462,7 +462,7 @@ export default function App() {
               type="button"
               onClick={handleRunAnalysis}
               disabled={isAnalyzing}
-              className="px-4 py-2 text-xs font-medium text-white bg-blue-700 rounded-md hover:bg-blue-800 disabled:opacity-60 transition-colors whitespace-nowrap shrink-0"
+              className="px-4 py-2 text-xs font-medium text-white bg-pink-700 rounded-md hover:bg-pink-800 disabled:opacity-60 transition-colors whitespace-nowrap shrink-0"
             >
               {isAnalyzing ? 'Menganalisis…' : 'Analisis Ruangan'}
             </button>
@@ -474,14 +474,14 @@ export default function App() {
       <main className="flex-1 max-w-[1440px] w-full mx-auto px-6 py-6 space-y-8">
         {/* Compact Room Config & Deterministic Metrics Strip */}
         <section id="denah-2d" className="space-y-4">
-          <div className="bg-white border border-slate-200 rounded-lg px-5 py-4 flex flex-wrap items-center justify-between gap-4 no-print">
+          <div className="bg-white border border-pink-200/80 rounded-lg px-5 py-4 flex flex-wrap items-center justify-between gap-4 no-print">
             <div className="flex flex-wrap items-center gap-4">
               <div>
                 <label className="block text-xs text-slate-500 mb-1">Template Ruang</label>
                 <select
                   value={room.id}
                   onChange={(e) => handleSelectTemplate(e.target.value)}
-                  className="px-2.5 py-1.5 text-sm font-medium text-slate-900 bg-slate-50 border border-slate-200 rounded-md focus:outline-none focus:border-blue-600"
+                  className="px-2.5 py-1.5 text-sm font-medium text-slate-900 bg-pink-50/50 border border-pink-200 rounded-md focus:outline-none focus:border-pink-600"
                 >
                   {ROOM_TEMPLATES.map((t) => (
                     <option key={t.id} value={t.id}>
@@ -505,7 +505,7 @@ export default function App() {
                         widthCm: Math.max(200, Math.min(1200, Number(e.target.value) || 200)),
                       })
                     }
-                    className="w-24 px-2.5 py-1.5 text-sm font-mono tabular-nums border border-slate-200 rounded-md focus:outline-none focus:border-blue-600"
+                    className="w-24 px-2.5 py-1.5 text-sm font-mono tabular-nums border border-slate-200 rounded-md focus:outline-none focus:border-pink-600"
                   />
                 </div>
                 <div>
@@ -521,7 +521,7 @@ export default function App() {
                         lengthCm: Math.max(200, Math.min(1200, Number(e.target.value) || 200)),
                       })
                     }
-                    className="w-24 px-2.5 py-1.5 text-sm font-mono tabular-nums border border-slate-200 rounded-md focus:outline-none focus:border-blue-600"
+                    className="w-24 px-2.5 py-1.5 text-sm font-mono tabular-nums border border-slate-200 rounded-md focus:outline-none focus:border-pink-600"
                   />
                 </div>
                 <div>
@@ -537,7 +537,7 @@ export default function App() {
                         ceilingCm: Math.max(220, Math.min(500, Number(e.target.value) || 220)),
                       })
                     }
-                    className="w-20 px-2.5 py-1.5 text-sm font-mono tabular-nums border border-slate-200 rounded-md focus:outline-none focus:border-blue-600"
+                    className="w-20 px-2.5 py-1.5 text-sm font-mono tabular-nums border border-slate-200 rounded-md focus:outline-none focus:border-pink-600"
                   />
                 </div>
               </div>
@@ -601,8 +601,8 @@ export default function App() {
               />
 
               {/* Real-Time Ergonomic Audit Strip */}
-              <div className="bg-white border border-slate-200 rounded-lg overflow-hidden">
-                <div className="px-4 py-3 border-b border-slate-200 flex flex-wrap items-center justify-between gap-2 bg-slate-50/70">
+              <div className="bg-white border border-pink-200/80 rounded-lg overflow-hidden">
+                <div className="px-4 py-3 border-b border-pink-100 flex flex-wrap items-center justify-between gap-2 bg-pink-50/40">
                   <h3 className="text-sm font-semibold text-slate-900">
                     Audit Ergonomi &amp; Sirkulasi Real-Time
                   </h3>
@@ -711,23 +711,23 @@ export default function App() {
       </main>
 
       {/* Quiet Minimal Footer */}
-      <footer className="bg-white border-t border-slate-200 mt-8 no-print">
+      <footer className="bg-white border-t border-pink-200/80 mt-8 no-print">
         <div className="max-w-[1440px] mx-auto px-6 py-5 flex flex-wrap items-center justify-between gap-4 text-xs text-slate-500">
           <span>RuangKarya · Perancang Denah Berskala &amp; Konsultan Interior Sistematis</span>
           <div className="flex flex-wrap items-center gap-4">
-            <a href="#denah-2d" className="hover:text-slate-900">
+            <a href="#denah-2d" className="hover:text-pink-700">
               Denah 2D
             </a>
-            <a href="#konsultan-ai" className="hover:text-slate-900">
+            <a href="#konsultan-ai" className="hover:text-pink-700">
               Konsultan AI
             </a>
-            <a href="#standar-industri" className="hover:text-slate-900">
+            <a href="#standar-industri" className="hover:text-pink-700">
               Standar Industri
             </a>
             <a
               href="/api/download-bundle"
               download="ruangkarya-vscode-github.zip"
-              className="text-blue-700 font-medium hover:underline"
+              className="text-pink-700 font-medium hover:underline"
             >
               Unduh Bundle VS Code (.zip)
             </a>

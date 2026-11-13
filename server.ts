@@ -300,9 +300,10 @@ ${audit.findings.map((f: any) => `  * [${f.severity.toUpperCase()}] ${f.rule}: $
 
 INSTRUKSI KHUSUS:
 1. Berikan seluruh jawaban dalam Bahasa Indonesia profesional yang lugas dan mudah dieksekusi.
-2. Pada bagian suggestedLayoutCoords, rancang koordinat denah 2D optimal dalam batas 0 <= xCm <= ${room.widthCm} dan 0 <= yCm <= ${room.lengthCm}, pastikan tidak ada perabot solid yang menabrak satu sama lain atau menghalangi area ayunan pintu (${JSON.stringify(room.openings.filter((o: any) => o.type === 'door'))}). Untuk karpet, set isFloorOverlay: true.
-3. Pastikan estimasi harga realistis dalam Rupiah (IDR) sesuai tier anggaran ${room.budgetTier}.
-4. Jika foto ruangan dilampirkan, analisis pula kondisi pencahayaan, proporsi dinding, dan tekstur aktual pada foto tersebut.`;
+2. Tema warna interior WAJIB serba Baby Pink yang harmonis: gunakan gradasi baby pink lembut (#FCE7F3 / #FDF2F8) untuk 60% dominan (dinding/plafon/lantai), blush/pastel pink (#FBCFE8 / #FAD2E1) untuk 30% sekunder (perabot utama & tekstil), dan dusty/rose baby pink (#F9A8D4 / #F472B6) untuk 10% aksen. Pastikan materialSpec juga mencerminkan nuansa baby pink.
+3. Pada bagian suggestedLayoutCoords, rancang koordinat denah 2D optimal dalam batas 0 <= xCm <= ${room.widthCm} dan 0 <= yCm <= ${room.lengthCm}, pastikan tidak ada perabot solid yang menabrak satu sama lain atau menghalangi area ayunan pintu (${JSON.stringify(room.openings.filter((o: any) => o.type === 'door'))}). Untuk karpet, set isFloorOverlay: true.
+4. Pastikan estimasi harga realistis dalam Rupiah (IDR) sesuai tier anggaran ${room.budgetTier}.
+5. Jika foto ruangan dilampirkan, analisis pula kondisi pencahayaan, proporsi dinding, dan tekstur aktual pada foto tersebut.`;
 
       const contents = photoBase64
         ? {

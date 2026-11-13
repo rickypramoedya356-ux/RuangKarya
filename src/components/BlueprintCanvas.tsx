@@ -170,8 +170,8 @@ export const BlueprintCanvas: React.FC<BlueprintCanvasProps> = ({
             y={y}
             width={w}
             height={h}
-            fill="#E0F2FE"
-            stroke="#0284C7"
+            fill="#FCE7F3"
+            stroke="#DB2777"
             strokeWidth={2}
           />
           {isHoriz ? (
@@ -180,7 +180,7 @@ export const BlueprintCanvas: React.FC<BlueprintCanvasProps> = ({
               y1={y + h / 2}
               x2={x + w}
               y2={y + h / 2}
-              stroke="#0284C7"
+              stroke="#DB2777"
               strokeWidth={1.5}
             />
           ) : (
@@ -189,7 +189,7 @@ export const BlueprintCanvas: React.FC<BlueprintCanvasProps> = ({
               y1={y}
               x2={x + w / 2}
               y2={y + h}
-              stroke="#0284C7"
+              stroke="#DB2777"
               strokeWidth={1.5}
             />
           )}
@@ -245,12 +245,13 @@ export const BlueprintCanvas: React.FC<BlueprintCanvasProps> = ({
           y={swing.y}
           width={swing.w}
           height={swing.h}
-          fill="rgba(29, 78, 216, 0.03)"
+          fill="rgba(219, 39, 119, 0.05)"
         />
         <path
           d={arcPath}
           fill="none"
-          stroke="#64748B"
+          stroke="#9D174D"
+          strokeOpacity={0.55}
           strokeWidth={1.5}
           strokeDasharray="5 4"
         />
@@ -259,7 +260,7 @@ export const BlueprintCanvas: React.FC<BlueprintCanvasProps> = ({
           y1={hingeY}
           x2={leafEndX}
           y2={leafEndY}
-          stroke="#0F172A"
+          stroke="#831843"
           strokeWidth={3}
         />
       </g>
@@ -282,32 +283,32 @@ export const BlueprintCanvas: React.FC<BlueprintCanvasProps> = ({
       <g className="pointer-events-none">
         {leftGap > 8 && (
           <>
-            <line x1={0} y1={cy} x2={box.x} y2={cy} stroke="#2563EB" strokeWidth={1.2} strokeDasharray="3 3" />
-            <text x={box.x / 2} y={cy - 4} textAnchor="middle" fontSize={10} fill="#1D4ED8" fontFamily="JetBrains Mono, monospace">
+            <line x1={0} y1={cy} x2={box.x} y2={cy} stroke="#DB2777" strokeWidth={1.2} strokeDasharray="3 3" />
+            <text x={box.x / 2} y={cy - 4} textAnchor="middle" fontSize={10} fill="#BE185D" fontFamily="JetBrains Mono, monospace">
               {leftGap}
             </text>
           </>
         )}
         {rightGap > 8 && (
           <>
-            <line x1={box.x + box.w} y1={cy} x2={room.widthCm} y2={cy} stroke="#2563EB" strokeWidth={1.2} strokeDasharray="3 3" />
-            <text x={box.x + box.w + rightGap / 2} y={cy - 4} textAnchor="middle" fontSize={10} fill="#1D4ED8" fontFamily="JetBrains Mono, monospace">
+            <line x1={box.x + box.w} y1={cy} x2={room.widthCm} y2={cy} stroke="#DB2777" strokeWidth={1.2} strokeDasharray="3 3" />
+            <text x={box.x + box.w + rightGap / 2} y={cy - 4} textAnchor="middle" fontSize={10} fill="#BE185D" fontFamily="JetBrains Mono, monospace">
               {rightGap}
             </text>
           </>
         )}
         {topGap > 8 && (
           <>
-            <line x1={cx} y1={0} x2={cx} y2={box.y} stroke="#2563EB" strokeWidth={1.2} strokeDasharray="3 3" />
-            <text x={cx + 5} y={box.y / 2 + 3} fontSize={10} fill="#1D4ED8" fontFamily="JetBrains Mono, monospace">
+            <line x1={cx} y1={0} x2={cx} y2={box.y} stroke="#DB2777" strokeWidth={1.2} strokeDasharray="3 3" />
+            <text x={cx + 5} y={box.y / 2 + 3} fontSize={10} fill="#BE185D" fontFamily="JetBrains Mono, monospace">
               {topGap}
             </text>
           </>
         )}
         {bottomGap > 8 && (
           <>
-            <line x1={cx} y1={box.y + box.h} x2={cx} y2={room.lengthCm} stroke="#2563EB" strokeWidth={1.2} strokeDasharray="3 3" />
-            <text x={cx + 5} y={box.y + box.h + bottomGap / 2 + 3} fontSize={10} fill="#1D4ED8" fontFamily="JetBrains Mono, monospace">
+            <line x1={cx} y1={box.y + box.h} x2={cx} y2={room.lengthCm} stroke="#DB2777" strokeWidth={1.2} strokeDasharray="3 3" />
+            <text x={cx + 5} y={box.y + box.h + bottomGap / 2 + 3} fontSize={10} fill="#BE185D" fontFamily="JetBrains Mono, monospace">
               {bottomGap}
             </text>
           </>
@@ -317,9 +318,9 @@ export const BlueprintCanvas: React.FC<BlueprintCanvasProps> = ({
   };
 
   return (
-    <div className="bg-white border border-slate-200 rounded-lg overflow-hidden">
+    <div className="bg-white border border-pink-200/80 rounded-lg overflow-hidden">
       {/* Canvas Action Toolbar */}
-      <div className="flex flex-wrap items-center justify-between gap-3 px-4 py-2.5 border-b border-slate-200 bg-slate-50/70">
+      <div className="flex flex-wrap items-center justify-between gap-3 px-4 py-2.5 border-b border-pink-100 bg-pink-50/40">
         <div className="flex items-center gap-2 text-xs text-slate-600">
           <span className="font-medium text-slate-900">Denah Skala 2D</span>
           <span aria-hidden="true">·</span>
@@ -336,7 +337,7 @@ export const BlueprintCanvas: React.FC<BlueprintCanvasProps> = ({
             onClick={() => setSnapEnabled((s) => !s)}
             className={`px-2.5 py-1.5 text-xs font-medium rounded border transition-colors whitespace-nowrap shrink-0 ${
               snapEnabled
-                ? 'bg-blue-50 text-blue-700 border-blue-200'
+                ? 'bg-pink-50 text-pink-700 border-pink-200'
                 : 'bg-white text-slate-600 border-slate-200 hover:text-slate-900'
             }`}
           >
@@ -406,7 +407,7 @@ export const BlueprintCanvas: React.FC<BlueprintCanvasProps> = ({
       </div>
 
       {/* Interactive SVG Drafting Canvas */}
-      <div className="bg-[#F8FAFC] p-4 flex items-center justify-center">
+      <div className="bg-[#FFF5F8] p-4 flex items-center justify-center">
         <svg
           ref={svgRef}
           viewBox={`${-margin} ${-margin} ${vbWidth} ${vbHeight}`}
@@ -416,14 +417,14 @@ export const BlueprintCanvas: React.FC<BlueprintCanvasProps> = ({
           onPointerUp={handlePointerUp}
           onPointerCancel={handlePointerUp}
         >
-          {/* Room Floor Surface */}
+          {/* Room Floor Surface (reflects active dominant baby pink palette) */}
           <rect
             x={0}
             y={0}
             width={room.widthCm}
             height={room.lengthCm}
-            fill="#FFFFFF"
-            stroke="#0F172A"
+            fill={room.colors?.dominant?.hex || '#FCE7F3'}
+            stroke="#831843"
             strokeWidth={5}
           />
 
@@ -435,7 +436,7 @@ export const BlueprintCanvas: React.FC<BlueprintCanvasProps> = ({
                 y1={0}
                 x2={x}
                 y2={room.lengthCm}
-                stroke={x % 100 === 0 ? '#E2E8F0' : '#F1F5F9'}
+                stroke={x % 100 === 0 ? 'rgba(190, 24, 93, 0.16)' : 'rgba(190, 24, 93, 0.07)'}
                 strokeWidth={1}
               />
               {x % 100 === 0 && (
@@ -444,7 +445,7 @@ export const BlueprintCanvas: React.FC<BlueprintCanvasProps> = ({
                   y={-12}
                   textAnchor="middle"
                   fontSize={10}
-                  fill="#64748B"
+                  fill="#9D174D"
                   fontFamily="JetBrains Mono, monospace"
                 >
                   {(x / 100).toFixed(0)}m
@@ -460,7 +461,7 @@ export const BlueprintCanvas: React.FC<BlueprintCanvasProps> = ({
                 y1={y}
                 x2={room.widthCm}
                 y2={y}
-                stroke={y % 100 === 0 ? '#E2E8F0' : '#F1F5F9'}
+                stroke={y % 100 === 0 ? 'rgba(190, 24, 93, 0.16)' : 'rgba(190, 24, 93, 0.07)'}
                 strokeWidth={1}
               />
               {y % 100 === 0 && (
@@ -469,7 +470,7 @@ export const BlueprintCanvas: React.FC<BlueprintCanvasProps> = ({
                   y={y + 3}
                   textAnchor="end"
                   fontSize={10}
-                  fill="#64748B"
+                  fill="#9D174D"
                   fontFamily="JetBrains Mono, monospace"
                 >
                   {(y / 100).toFixed(0)}m
@@ -512,7 +513,7 @@ export const BlueprintCanvas: React.FC<BlueprintCanvasProps> = ({
             const isSelected = item.id === selectedId;
             const severity = itemSeverityMap.get(item.id);
 
-            let strokeColor = '#475569';
+            let strokeColor = '#9D174D';
             let strokeWidth = 1.5;
             if (severity === 'critical') {
               strokeColor = '#DC2626';
@@ -522,7 +523,7 @@ export const BlueprintCanvas: React.FC<BlueprintCanvasProps> = ({
               strokeWidth = 2;
             }
             if (isSelected) {
-              strokeColor = '#1D4ED8';
+              strokeColor = '#BE185D';
               strokeWidth = 2.5;
             }
 
@@ -541,7 +542,7 @@ export const BlueprintCanvas: React.FC<BlueprintCanvasProps> = ({
                   width={box.w}
                   height={box.h}
                   rx={item.category === 'lighting' || item.catalogId === 'indoor-plant' ? Math.min(box.w, box.h) / 2 : 3}
-                  fill={item.colorHex || '#E2E8F0'}
+                  fill={item.colorHex || '#FBCFE8'}
                   fillOpacity={fillOpacity}
                   stroke={strokeColor}
                   strokeWidth={strokeWidth}
@@ -555,9 +556,9 @@ export const BlueprintCanvas: React.FC<BlueprintCanvasProps> = ({
                     y1={box.y + box.h - 14}
                     x2={box.x + box.w - 6}
                     y2={box.y + box.h - 14}
-                    stroke="#64748B"
+                    stroke="#9D174D"
                     strokeWidth={1}
-                    strokeOpacity={0.5}
+                    strokeOpacity={0.4}
                   />
                 )}
                 {item.category === 'bed' && (
@@ -568,8 +569,8 @@ export const BlueprintCanvas: React.FC<BlueprintCanvasProps> = ({
                       width={Math.max(24, box.w / 2 - 18)}
                       height={26}
                       rx={3}
-                      fill="#FFFFFF"
-                      stroke="#94A3B8"
+                      fill="#FFF5F8"
+                      stroke="#F472B6"
                       strokeWidth={1}
                     />
                     {box.w > 140 && (
@@ -579,8 +580,8 @@ export const BlueprintCanvas: React.FC<BlueprintCanvasProps> = ({
                         width={Math.max(24, box.w / 2 - 18)}
                         height={26}
                         rx={3}
-                        fill="#FFFFFF"
-                        stroke="#94A3B8"
+                        fill="#FFF5F8"
+                        stroke="#F472B6"
                         strokeWidth={1}
                       />
                     )}
@@ -594,7 +595,7 @@ export const BlueprintCanvas: React.FC<BlueprintCanvasProps> = ({
                   textAnchor="middle"
                   fontSize={Math.min(11, Math.max(8, box.w / 10))}
                   fontWeight="600"
-                  fill="#0F172A"
+                  fill="#500724"
                   className="pointer-events-none"
                 >
                   {item.name.length > 18 && box.w < 130 ? `${item.name.slice(0, 15)}…` : item.name}
@@ -605,7 +606,7 @@ export const BlueprintCanvas: React.FC<BlueprintCanvasProps> = ({
                     y={box.y + box.h / 2 + 10}
                     textAnchor="middle"
                     fontSize={9}
-                    fill="#475569"
+                    fill="#831843"
                     fontFamily="JetBrains Mono, monospace"
                     className="pointer-events-none"
                   >
@@ -621,22 +622,22 @@ export const BlueprintCanvas: React.FC<BlueprintCanvasProps> = ({
       </div>
 
       {/* Canvas Footer Legend */}
-      <div className="px-4 py-2.5 border-t border-slate-200 bg-white flex flex-wrap items-center justify-between gap-3 text-xs text-slate-500">
+      <div className="px-4 py-2.5 border-t border-pink-100 bg-white flex flex-wrap items-center justify-between gap-3 text-xs text-slate-500">
         <div className="flex flex-wrap items-center gap-4">
           <span className="inline-flex items-center gap-1.5">
-            <span className="w-3 h-3 inline-block border border-slate-600 bg-slate-200 rounded-xs" />
+            <span className="w-3 h-3 inline-block border border-pink-700 bg-pink-200 rounded-xs" />
             Perabot
           </span>
           <span className="inline-flex items-center gap-1.5">
-            <span className="w-3 h-3 inline-block border border-dashed border-slate-500 bg-slate-100 rounded-xs" />
+            <span className="w-3 h-3 inline-block border border-dashed border-pink-600 bg-pink-100 rounded-xs" />
             Karpet / Zona Lantai
           </span>
           <span className="inline-flex items-center gap-1.5">
-            <span className="w-3 h-0.5 inline-block bg-sky-600" />
+            <span className="w-3 h-0.5 inline-block bg-pink-600" />
             Jendela (klik ganda untuk hapus)
           </span>
           <span className="inline-flex items-center gap-1.5">
-            <span className="w-3 h-3 inline-block border border-dashed border-slate-500 rounded-tl-full" />
+            <span className="w-3 h-3 inline-block border border-dashed border-pink-700 rounded-tl-full" />
             Ayunan Pintu
           </span>
         </div>

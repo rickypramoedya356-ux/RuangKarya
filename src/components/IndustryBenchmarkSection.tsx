@@ -49,8 +49,8 @@ const MINIMUM_STANDARDS = [
 
 export const IndustryBenchmarkSection: React.FC = () => {
   return (
-    <section id="standar-industri" className="bg-white border border-slate-200 rounded-lg overflow-hidden">
-      <div className="px-6 py-5 border-b border-slate-200">
+    <section id="standar-industri" className="bg-white border border-pink-200/80 rounded-lg overflow-hidden">
+      <div className="px-6 py-5 border-b border-pink-100">
         <h2 className="text-xl font-semibold text-slate-900">
           Standar Minimum Aplikasi Room Design &amp; Ergonomi Interior
         </h2>

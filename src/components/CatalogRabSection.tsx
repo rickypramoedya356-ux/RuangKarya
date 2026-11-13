@@ -16,8 +16,8 @@ export const CatalogRabSection: React.FC<CatalogRabSectionProps> = ({ room, audi
   const grandTotal = audit.totalBudgetIdr + estimatedLightingBudget + estimatedPaintBudget;
 
   return (
-    <section id="katalog-rab" className="bg-white border border-slate-200 rounded-lg overflow-hidden">
-      <div className="px-6 py-5 border-b border-slate-200 flex flex-wrap items-center justify-between gap-4">
+    <section id="katalog-rab" className="bg-white border border-pink-200/80 rounded-lg overflow-hidden">
+      <div className="px-6 py-5 border-b border-pink-100 flex flex-wrap items-center justify-between gap-4">
         <div>
           <h2 className="text-xl font-semibold text-slate-900">
             Rencana Anggaran Biaya (RAB) &amp; Spesifikasi Teknis

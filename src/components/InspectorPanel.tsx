@@ -62,10 +62,10 @@ export const InspectorPanel: React.FC<InspectorPanelProps> = ({
   };
 
   return (
-    <aside className="bg-white border border-slate-200 rounded-lg flex flex-col overflow-hidden">
+    <aside className="bg-white border border-pink-200/80 rounded-lg flex flex-col overflow-hidden">
       {/* Segmented Control */}
-      <div className="p-2 border-b border-slate-200 bg-slate-50/70">
-        <div className="grid grid-cols-3 gap-1 p-1 bg-slate-200/70 rounded-md">
+      <div className="p-2 border-b border-pink-100 bg-pink-50/50">
+        <div className="grid grid-cols-3 gap-1 p-1 bg-pink-100/80 rounded-md">
           <button
             type="button"
             onClick={() => setActiveTab('furniture')}
@@ -121,7 +121,7 @@ export const InspectorPanel: React.FC<InspectorPanelProps> = ({
                     type="text"
                     value={selectedItem.name}
                     onChange={(e) => onUpdateFurniture(selectedItem.id, { name: e.target.value })}
-                    className="w-full px-2.5 py-1.5 text-sm border border-slate-200 rounded focus:outline-none focus:border-blue-600"
+                    className="w-full px-2.5 py-1.5 text-sm border border-slate-200 rounded focus:outline-none focus:border-pink-600"
                   />
                 </div>
 
@@ -138,7 +138,7 @@ export const InspectorPanel: React.FC<InspectorPanelProps> = ({
                           widthCm: Math.max(20, Number(e.target.value) || 20),
                         })
                       }
-                      className="w-full px-2 py-1.5 text-xs font-mono tabular-nums border border-slate-200 rounded focus:outline-none focus:border-blue-600"
+                      className="w-full px-2 py-1.5 text-xs font-mono tabular-nums border border-slate-200 rounded focus:outline-none focus:border-pink-600"
                     />
                   </div>
                   <div>
@@ -153,7 +153,7 @@ export const InspectorPanel: React.FC<InspectorPanelProps> = ({
                           depthCm: Math.max(20, Number(e.target.value) || 20),
                         })
                       }
-                      className="w-full px-2 py-1.5 text-xs font-mono tabular-nums border border-slate-200 rounded focus:outline-none focus:border-blue-600"
+                      className="w-full px-2 py-1.5 text-xs font-mono tabular-nums border border-slate-200 rounded focus:outline-none focus:border-pink-600"
                     />
                   </div>
                   <div>
@@ -168,7 +168,7 @@ export const InspectorPanel: React.FC<InspectorPanelProps> = ({
                           heightCm: Math.max(2, Number(e.target.value) || 2),
                         })
                       }
-                      className="w-full px-2 py-1.5 text-xs font-mono tabular-nums border border-slate-200 rounded focus:outline-none focus:border-blue-600"
+                      className="w-full px-2 py-1.5 text-xs font-mono tabular-nums border border-slate-200 rounded focus:outline-none focus:border-pink-600"
                     />
                   </div>
                 </div>
@@ -179,7 +179,7 @@ export const InspectorPanel: React.FC<InspectorPanelProps> = ({
                     type="text"
                     value={selectedItem.material}
                     onChange={(e) => onUpdateFurniture(selectedItem.id, { material: e.target.value })}
-                    className="w-full px-2.5 py-1.5 text-xs border border-slate-200 rounded focus:outline-none focus:border-blue-600"
+                    className="w-full px-2.5 py-1.5 text-xs border border-slate-200 rounded focus:outline-none focus:border-pink-600"
                   />
                 </div>
               </div>
@@ -226,7 +226,7 @@ export const InspectorPanel: React.FC<InspectorPanelProps> = ({
                     <button
                       type="button"
                       onClick={() => onAddFurniture(item)}
-                      className="inline-flex items-center gap-1 px-2.5 py-1.5 text-xs font-medium text-blue-700 bg-blue-50 hover:bg-blue-100 rounded transition-colors whitespace-nowrap shrink-0"
+                      className="inline-flex items-center gap-1 px-2.5 py-1.5 text-xs font-medium text-pink-700 bg-pink-50 hover:bg-pink-100 rounded transition-colors whitespace-nowrap shrink-0"
                     >
                       <Plus className="w-3.5 h-3.5" />
                       <span>Tambah</span>
@@ -252,11 +252,11 @@ export const InspectorPanel: React.FC<InspectorPanelProps> = ({
                       onClick={() => onSelectStyle(preset.id)}
                       className={`text-left border rounded-md overflow-hidden transition-colors ${
                         isActive
-                          ? 'border-blue-600 ring-1 ring-blue-600'
-                          : 'border-slate-200 hover:border-slate-300'
+                          ? 'border-pink-600 ring-1 ring-pink-600'
+                          : 'border-slate-200 hover:border-pink-300'
                       }`}
                     >
-                      <div className="aspect-[16/9] bg-slate-100 relative overflow-hidden">
+                      <div className="aspect-[16/9] bg-pink-50 relative overflow-hidden">
                         <img
                           src={preset.imageUrl}
                           alt={preset.name}
@@ -264,7 +264,7 @@ export const InspectorPanel: React.FC<InspectorPanelProps> = ({
                           className="w-full h-full object-cover"
                         />
                         {isActive && (
-                          <span className="absolute top-2 right-2 w-6 h-6 rounded-full bg-blue-600 text-white flex items-center justify-center">
+                          <span className="absolute top-2 right-2 w-6 h-6 rounded-full bg-pink-600 text-white flex items-center justify-center">
                             <Check className="w-3.5 h-3.5" />
                           </span>
                         )}
@@ -340,7 +340,7 @@ export const InspectorPanel: React.FC<InspectorPanelProps> = ({
                     type="text"
                     value={room.wallFinish}
                     onChange={(e) => onUpdateRoom({ wallFinish: e.target.value })}
-                    className="w-full px-2.5 py-1.5 text-xs border border-slate-200 rounded focus:outline-none focus:border-blue-600"
+                    className="w-full px-2.5 py-1.5 text-xs border border-slate-200 rounded focus:outline-none focus:border-pink-600"
                   />
                 </div>
                 <div>
@@ -349,7 +349,7 @@ export const InspectorPanel: React.FC<InspectorPanelProps> = ({
                     type="text"
                     value={room.floorMaterial}
                     onChange={(e) => onUpdateRoom({ floorMaterial: e.target.value })}
-                    className="w-full px-2.5 py-1.5 text-xs border border-slate-200 rounded focus:outline-none focus:border-blue-600"
+                    className="w-full px-2.5 py-1.5 text-xs border border-slate-200 rounded focus:outline-none focus:border-pink-600"
                   />
                 </div>
               </div>
@@ -365,7 +365,7 @@ export const InspectorPanel: React.FC<InspectorPanelProps> = ({
                 type="text"
                 value={room.name}
                 onChange={(e) => onUpdateRoom({ name: e.target.value })}
-                className="w-full px-2.5 py-1.5 text-sm border border-slate-200 rounded focus:outline-none focus:border-blue-600"
+                className="w-full px-2.5 py-1.5 text-sm border border-slate-200 rounded focus:outline-none focus:border-pink-600"
               />
             </div>
 
@@ -375,7 +375,7 @@ export const InspectorPanel: React.FC<InspectorPanelProps> = ({
                 <select
                   value={room.roomType}
                   onChange={(e) => onUpdateRoom({ roomType: e.target.value as RoomType })}
-                  className="w-full px-2.5 py-1.5 text-xs border border-slate-200 rounded bg-white focus:outline-none focus:border-blue-600"
+                  className="w-full px-2.5 py-1.5 text-xs border border-slate-200 rounded bg-white focus:outline-none focus:border-pink-600"
                 >
                   <option value="living">Ruang Tamu / Keluarga</option>
                   <option value="bedroom">Kamar Tidur</option>
@@ -389,7 +389,7 @@ export const InspectorPanel: React.FC<InspectorPanelProps> = ({
                 <select
                   value={room.orientation}
                   onChange={(e) => onUpdateRoom({ orientation: e.target.value as Orientation })}
-                  className="w-full px-2.5 py-1.5 text-xs border border-slate-200 rounded bg-white focus:outline-none focus:border-blue-600"
+                  className="w-full px-2.5 py-1.5 text-xs border border-slate-200 rounded bg-white focus:outline-none focus:border-pink-600"
                 >
                   <option value="Utara">Utara (Cahaya Merata)</option>
                   <option value="Timur">Timur (Matahari Pagi)</option>
@@ -405,7 +405,7 @@ export const InspectorPanel: React.FC<InspectorPanelProps> = ({
                 <select
                   value={room.budgetTier}
                   onChange={(e) => onUpdateRoom({ budgetTier: e.target.value as BudgetTier })}
-                  className="w-full px-2.5 py-1.5 text-xs border border-slate-200 rounded bg-white focus:outline-none focus:border-blue-600"
+                  className="w-full px-2.5 py-1.5 text-xs border border-slate-200 rounded bg-white focus:outline-none focus:border-pink-600"
                 >
                   <option value="Ekonomis">Ekonomis</option>
                   <option value="Menengah">Menengah</option>
@@ -420,7 +420,7 @@ export const InspectorPanel: React.FC<InspectorPanelProps> = ({
                   max={12}
                   value={room.occupants}
                   onChange={(e) => onUpdateRoom({ occupants: Math.max(1, Number(e.target.value) || 1) })}
-                  className="w-full px-2.5 py-1.5 text-xs font-mono tabular-nums border border-slate-200 rounded focus:outline-none focus:border-blue-600"
+                  className="w-full px-2.5 py-1.5 text-xs font-mono tabular-nums border border-slate-200 rounded focus:outline-none focus:border-pink-600"
                 />
               </div>
             </div>
@@ -432,7 +432,7 @@ export const InspectorPanel: React.FC<InspectorPanelProps> = ({
                 value={room.notes}
                 onChange={(e) => onUpdateRoom({ notes: e.target.value })}
                 placeholder="Misal: perlu ruang kerja lipat, ramah anak kecil, atau banyak koleksi buku..."
-                className="w-full px-2.5 py-1.5 text-xs border border-slate-200 rounded focus:outline-none focus:border-blue-600"
+                className="w-full px-2.5 py-1.5 text-xs border border-slate-200 rounded focus:outline-none focus:border-pink-600"
               />
             </div>
 

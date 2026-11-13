@@ -49,9 +49,9 @@ export const AdvisorySection: React.FC<AdvisorySectionProps> = ({
   };
 
   return (
-    <section id="konsultan-ai" className="bg-white border border-slate-200 rounded-lg overflow-hidden">
+    <section id="konsultan-ai" className="bg-white border border-pink-200/80 rounded-lg overflow-hidden">
       {/* Section Header */}
-      <div className="px-6 py-5 border-b border-slate-200 flex flex-wrap items-center justify-between gap-4">
+      <div className="px-6 py-5 border-b border-pink-100 flex flex-wrap items-center justify-between gap-4">
         <div>
           <h2 className="text-xl font-semibold text-slate-900">
             Konsultan Interior &amp; Perabotan Sistematis
@@ -68,7 +68,7 @@ export const AdvisorySection: React.FC<AdvisorySectionProps> = ({
                 type="button"
                 onClick={() => onApplySuggestedLayout(report.suggestedLayoutCoords)}
                 disabled={!report.suggestedLayoutCoords?.length}
-                className="inline-flex items-center gap-1.5 px-3.5 py-2 text-xs font-medium text-blue-700 bg-blue-50 border border-blue-200 rounded-md hover:bg-blue-100 transition-colors whitespace-nowrap shrink-0"
+                className="inline-flex items-center gap-1.5 px-3.5 py-2 text-xs font-medium text-pink-700 bg-pink-50 border border-pink-200 rounded-md hover:bg-pink-100 transition-colors whitespace-nowrap shrink-0"
               >
                 <LayoutGrid className="w-3.5 h-3.5" />
                 <span>Terapkan Tata Letak AI ke Denah</span>
@@ -95,7 +95,7 @@ export const AdvisorySection: React.FC<AdvisorySectionProps> = ({
             type="button"
             onClick={onRunAnalysis}
             disabled={isLoading}
-            className="inline-flex items-center gap-1.5 px-4 py-2 text-xs font-medium text-white bg-blue-700 rounded-md hover:bg-blue-800 disabled:opacity-60 transition-colors whitespace-nowrap shrink-0"
+            className="inline-flex items-center gap-1.5 px-4 py-2 text-xs font-medium text-white bg-pink-700 rounded-md hover:bg-pink-800 disabled:opacity-60 transition-colors whitespace-nowrap shrink-0"
           >
             <Layers className="w-3.5 h-3.5" />
             <span>{isLoading ? 'Menyusun Analisis…' : report ? 'Analisis Ulang Ruangan' : 'Mulai Analisis Sistematis'}</span>
@@ -143,7 +143,7 @@ export const AdvisorySection: React.FC<AdvisorySectionProps> = ({
           <button
             type="button"
             onClick={onRunAnalysis}
-            className="mt-5 inline-flex items-center gap-2 px-4 py-2 text-sm font-medium text-white bg-blue-700 rounded-md hover:bg-blue-800 transition-colors"
+            className="mt-5 inline-flex items-center gap-2 px-4 py-2 text-sm font-medium text-white bg-pink-700 rounded-md hover:bg-pink-800 transition-colors"
           >
             Mulai Analisis Sistematis
           </button>
@@ -187,7 +187,7 @@ export const AdvisorySection: React.FC<AdvisorySectionProps> = ({
                 <ul className="space-y-1.5 text-sm text-slate-700">
                   {report.spatialAndCirculation.clearanceFixes.map((fix, idx) => (
                     <li key={idx} className="flex items-start gap-2">
-                      <CheckCircle2 className="w-4 h-4 text-blue-700 mt-0.5 shrink-0" />
+                      <CheckCircle2 className="w-4 h-4 text-pink-700 mt-0.5 shrink-0" />
                       <span>{fix}</span>
                     </li>
                   ))}
@@ -238,7 +238,7 @@ export const AdvisorySection: React.FC<AdvisorySectionProps> = ({
                         <span
                           className={
                             item.priority === 'Wajib'
-                              ? 'text-blue-700 font-semibold'
+                              ? 'text-pink-700 font-semibold'
                               : item.priority === 'Disarankan'
                                 ? 'text-slate-700 font-medium'
                                 : 'text-slate-500'
@@ -367,7 +367,7 @@ export const AdvisorySection: React.FC<AdvisorySectionProps> = ({
               {report.phasedActionPlan.map((phase, idx) => (
                 <div key={idx} className="border border-slate-200 rounded-md p-4 bg-slate-50/40">
                   <div className="flex items-center justify-between gap-2 mb-2">
-                    <span className="text-xs font-medium text-blue-700">{phase.phase}</span>
+                    <span className="text-xs font-medium text-pink-700">{phase.phase}</span>
                     <span className="text-xs font-mono tabular-nums text-slate-700">
                       {formatIdr(phase.estimatedCostIdr)}
                     </span>
@@ -418,7 +418,7 @@ export const AdvisorySection: React.FC<AdvisorySectionProps> = ({
                 value={question}
                 onChange={(e) => setQuestion(e.target.value)}
                 placeholder="Contoh: Bagaimana jika saya ingin menambah meja kerja lipat tanpa mempersempit akses pintu?"
-                className="flex-1 px-3 py-2 text-sm bg-white border border-slate-200 rounded-md focus:outline-none focus:border-blue-600"
+                className="flex-1 px-3 py-2 text-sm bg-white border border-slate-200 rounded-md focus:outline-none focus:border-pink-600"
               />
               <button
                 type="submit"
