@@ -240,7 +240,7 @@ async function startServer() {
     try {
       const zipBuffer = createProjectZipBuffer(__dirname);
       res.setHeader('Content-Type', 'application/zip');
-      res.setHeader('Content-Disposition', 'attachment; filename="ruangkarya-vscode-github.zip"');
+      res.setHeader('Content-Disposition', 'attachment; filename="ruangkaryahasna-vscode-github.zip"');
       res.setHeader('Content-Length', zipBuffer.length);
       return res.send(zipBuffer);
     } catch (error: any) {
@@ -371,7 +371,7 @@ ${reportSummary ? `- Ringkasan Konsultasi Sebelumnya: ${reportSummary}` : ''}`;
         contents: `${contextPreamble}\n\nRiwayat Tanya Jawab:\n${formattedHistory}\n\nPertanyaan Baru Pengguna: ${question}`,
         config: {
           systemInstruction:
-            'Anda adalah Arsitek Interior Senior RuangKarya. Jawab pertanyaan lanjutan pengguna secara sistematis, ringkas, berbasis angka ukuran (cm/meter/lumen/Kelvin/IDR), dan merujuk langsung pada kondisi denah aktif mereka. Gunakan Bahasa Indonesia yang jelas dengan poin terstruktur bila perlu.',
+            'Anda adalah Arsitek Interior Senior RuangKaryaHasna. Jawab pertanyaan lanjutan pengguna secara sistematis, ringkas, berbasis angka ukuran (cm/meter/lumen/Kelvin/IDR), dan merujuk langsung pada kondisi denah aktif mereka. Gunakan Bahasa Indonesia yang jelas dengan poin terstruktur bila perlu.',
         },
       });
 
@@ -397,7 +397,7 @@ ${reportSummary ? `- Ringkasan Konsultasi Sebelumnya: ${reportSummary}` : ''}`;
   }
 
   app.listen(PORT, '0.0.0.0', () => {
-    console.log(`RuangKarya server listening on http://0.0.0.0:${PORT}`);
+    console.log(`RuangKaryaHasna server listening on http://0.0.0.0:${PORT}`);
   });
 }
 

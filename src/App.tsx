@@ -437,7 +437,7 @@ export default function App() {
             className="text-lg font-bold tracking-tight text-slate-900 whitespace-nowrap shrink-0"
             style={{ fontFamily: 'var(--font-display)' }}
           >
-            RuangKarya
+            RuangKaryaHasna
           </a>
 
           {/* Zone 2: 4 single-line nav links */}
@@ -713,7 +713,7 @@ export default function App() {
       {/* Quiet Minimal Footer */}
       <footer className="bg-white border-t border-slate-200 mt-8 no-print">
         <div className="max-w-[1440px] mx-auto px-6 py-5 flex flex-wrap items-center justify-between gap-4 text-xs text-slate-500">
-          <span>RuangKarya · Perancang Denah Berskala &amp; Konsultan Interior Sistematis</span>
+          <span>RuangKaryaHasna · Perancang Denah Berskala &amp; Konsultan Interior Sistematis</span>
           <div className="flex flex-wrap items-center gap-4">
             <a href="#denah-2d" className="hover:text-slate-900">
               Denah 2D
@@ -726,7 +726,7 @@ export default function App() {
             </a>
             <a
               href="/api/download-bundle"
-              download="ruangkarya-vscode-github.zip"
+              download="ruangkaryahasna-vscode-github.zip"
               className="text-blue-700 font-medium hover:underline"
             >
               Unduh Bundle VS Code (.zip)

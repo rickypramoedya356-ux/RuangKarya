@@ -1,5 +1,5 @@
 {
-  "name": "RuangKarya — Studio Perancang Ruang & Konsultan Interior Sistematis",
+  "name": "RuangKaryaHasna — Studio Perancang Ruang & Konsultan Interior Sistematis",
   "description": "Aplikasi perancang denah ruang 2D berskala dengan audit ergonomi real-time, kalkulator pencahayaan, aturan warna 60-30-10, dan konsultan interior & perabotan sistematis.",
   "requestFramePermissions": [],
   "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
